@@ -1,0 +1,42 @@
+
+/* --- Header ---- */
+
+div.btn-group.pull-left div.btn.btn-navbar a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+div.btn-group.pull-right div.btn.btn-navbar a {
+    color: black;
+    text-transform: none;
+    text-decoration: none;
+}
+
+
+/* --- Home --- */
+
+div.list-group-item > div.icon {
+    float: left;
+    font-size: 28pt;
+}
+
+/* --- Tables --- */
+
+td.boolean i.fa-check {
+    color: green;
+}
+
+td.boolean i.fa-times {
+    color: red;
+}
+
+.entry-disabled {
+    text-decoration: line-through;
+    color: #666;
+}
+
+/* --- Forms --- */
+
+div.error {
+    color: red;
+}

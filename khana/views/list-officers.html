@@ -1,0 +1,35 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <h2 class="text-center">Officers</h2>
+
+        <table class="table table-striped" ng-show="rows.length > 0">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Section</th>
+                    <th>Subsection</th>
+                    <th>Login code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in rows" ng-click="edit(row.id)" ng-class="row.disabled? 'entry-disabled' : ''">
+                    <td>{{row.code}}</td>
+                    <td>{{row.last_name}}, {{row.first_name}}</td>
+                    <td>{{row.section}}</td>
+                    <td>{{row.subsection}}</td>
+                    <td>{{row.login_code}}</td>
+                </tr>
+                <tr>
+                    <td colspan="5" ng-click="edit(null)" class="text-center">
+                        <button class="btn btn-primary">Create</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center" ng-hide="rows.length > 0">
+            No data available.
+        </div>
+    </div>
+</div>

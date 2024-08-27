@@ -1,0 +1,30 @@
+
+<div class="scrollable">
+    <div class="scrollable-content section">
+        <div ng-hide="logged">
+            <form role="form" ng-submit='login()'>
+                <fieldset>
+                    <legend>Login</legend>
+
+                    <div class="form-group">
+                        <label for="inputUsername">Username</label>
+                        <input type="text" ng-model="user.name" placeholder="Enter username" id="inputUsername" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" ng-model="user.pass" placeholder="Enter password" id="inputPassword" class="form-control">
+                    </div>
+                </fieldset>
+                <hr>
+                <button class="btn btn-primary btn-block">Login</button>
+            </form>
+        </div>
+
+        <div ng-show="logged">
+            <div class="text-center">You are currently logged has <strong>{{user.name}}</strong></div>
+            <hr>
+            <button class="btn btn-primary btn-block" ng-click="logout()">Logout</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <div class="container-fluid">
+            <h2 class="text-center">Edit officer</h2>
+
+            <form novalidate name="form" ng-submit="save(form)">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="first_name">First name</label>
+                            <input type="text" class="form-control" id="first_name" placeholder="First name" ng-model="entry.first_name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="last_name">Last name</label>
+                            <input type="text" required="" name="uLastName" class="form-control" id="last_name" placeholder="Last name" ng-model="entry.last_name">
+                        </div>
+                        <div class="error" ng-show="form.$submitted && form.uLastName.$error.required">The last name is a required field</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="section">Section</label>
+                            <input type="text" class="form-control" id="section" placeholder="Section" ng-model="entry.section">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="subsection">Sub-section</label>
+                            <input type="text" class="form-control" id="subsection" placeholder="Sub-section" ng-model="entry.subsection">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="code">Code</label>
+                            <input type="text" required="" name="uCode" class="form-control" id="code" placeholder="Code" ng-model="entry.code">
+                        </div>
+                        <div class="error" ng-show="form.$submitted && form.uCode.$error.required">The code is a required field</div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="login_code">Login code</label>
+                            <input type="text" class="form-control" id="login_code" placeholder="Login code" ng-model="entry.login_code">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="uDisabled" id="disabled" 
+                                       ng-model="entry.disabled" ng-true-value="1" ng-false-value="0" 
+                                       ng-checked="entry.disabled === 1" > Disabled
+                            </label>
+                        </div>
+                    </div>                    
+                </div>                
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="observations">Observations</label>
+                            <textarea id="observations" class="form-control" placeholder="Observations" ng-model="entry.observations"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-4"><button type="reset" ng-click="goBack()" class="btn btn-warning btn-block">Go back</button></div>
+                    <div class="col-xs-4"><a class="btn btn-danger btn-block" ng-click="delete()" ng-hide="entry.id === null">Delete</a></div>
+                    <div class="col-xs-4"><button type="submit" class="btn btn-success btn-block">Save</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

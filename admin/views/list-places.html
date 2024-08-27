@@ -1,0 +1,20 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <h2 class="text-center">Places</h2>
+
+        <div class="list-group text-center" ng-show="rows.length > 0">
+            <div class="list-group-item" ng-repeat="row in rows" ng-click="edit(row.id)" ng-class="row.disabled? 'entry-disabled' : ''">
+                {{row.name}}
+            </div>
+
+            <div class="list-group-item" ng-click="edit(null)">
+                <button class="btn btn-primary">Create</button>
+            </div>
+        </div>
+
+        <div class="text-center" ng-hide="rows.length > 0">
+            No data available.
+        </div>
+        
+    </div>
+</div>

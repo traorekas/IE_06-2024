@@ -1,0 +1,33 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <div class="container-fluid">
+            <h2 class="text-center">Edit {{ type }}</h2>
+
+            <form novalidate name="form" ng-submit="save(form)">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" required="" name="uName" class="form-control" id="name" placeholder="Enter name" ng-model="entry.name">
+                        </div> 
+                        <div ng-show="form.$submitted && form.uName.$error.required" class="error col-md-12">The name is a required field</div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="uDisabled" id="disabled" 
+                                       ng-model="entry.disabled" ng-true-value="1" ng-false-value="0" 
+                                       ng-checked="entry.disabled === 1" > Disabled
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-4"><button type="reset" ng-click="goBack()" class="btn btn-warning btn-block">Go back</button></div>
+                    <div class="col-xs-4"><a class="btn btn-danger btn-block" ng-click="delete()" ng-hide="entry.id === null">Delete</a></div>
+                    <div class="col-xs-4"><button type="submit" class="btn btn-success btn-block">Save</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

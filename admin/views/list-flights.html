@@ -1,0 +1,20 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <h2 class="text-center">Flights</h2>
+
+        <div class="list-group text-center" ng-show="flights.length > 0">
+            <div class="list-group-item" ng-repeat="flight in flights" ng-click="edit(flight.id)" ng-class="flight.disabled? 'entry-disabled' : ''">
+                {{getCompany(flight)}} <strong>{{flight.name}}</strong>
+            </div>
+
+            <div class="list-group-item" ng-click="edit(null)">
+                <button class="btn btn-primary">Create</button>
+            </div>
+        </div>
+
+        <div class="text-center" ng-hide="flights.length > 0">
+            No data available.
+        </div>
+        
+    </div>
+</div>

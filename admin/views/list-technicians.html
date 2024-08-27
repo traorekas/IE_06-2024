@@ -1,0 +1,31 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <h2 class="text-center">Technicians</h2>
+
+        <table class="table table-striped" ng-show="rows.length > 0">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Admin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in rows" ng-click="edit(row.id)">
+                    <td>{{row.username}}</td>
+                    <td>{{row.last_name}}, {{row.first_name}}</td>
+                    <td>{{row.email}}</td>
+                    <td class="boolean">
+                        <i class="fa fa-check" ng-show="row.is_admin == 1"></i>
+                        <i class="fa fa-times" ng-show="row.is_admin == 0"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center" ng-hide="rows.length > 0">
+            No data available.
+        </div>
+    </div>
+</div>

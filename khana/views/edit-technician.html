@@ -1,0 +1,53 @@
+<div class="scrollable">  
+    <div class="scrollable-content">
+        <div class="container-fluid">
+            <h2 class="text-center">Edit flight</h2>
+
+            <form name="form" novalidate ng-submit="save(form)">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" required="" name="uUsername" class="form-control" id="username" placeholder="Username" ng-model="entry.username">
+                        </div>
+                        <div class="error" ng-show="form.$submitted && form.uUsername.$error.required">The username is a required field</div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email" ng-model="entry.email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="first_name">First name</label>
+                            <input type="text" class="form-control" id="first_name" placeholder="First name" ng-model="entry.first_name">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="last_name">Last name</label>
+                            <input type="text" required="" name="uLastName" class="form-control" id="last_name" placeholder="Last name" ng-model="entry.last_name">
+                        </div>
+                        <div class="error" ng-show="form.$submitted && form.uLastName.$error.required">The last name is a required field</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="observations">Observations</label>
+                            <textarea id="observations" class="form-control" placeholder="Observations" ng-model="entry.observations"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-4"><button type="reset" ng-click="goBack()" class="btn btn-warning btn-block">Go back</button></div>
+                    <div class="col-xs-4"><a class="btn btn-danger btn-block" ng-click="delete()" ng-hide="entry.id === null">Delete</a></div>
+                    <div class="col-xs-4"><button type="submit" class="btn btn-success btn-block">Save</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
